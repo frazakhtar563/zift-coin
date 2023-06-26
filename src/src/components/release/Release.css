@@ -1,0 +1,28 @@
+
+@media only screen and (max-width: 1200px){
+ .text-light {
+    font-size: 30px;
+ }
+ .releas-sd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+ }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+    .releas-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+     }
+    
+}

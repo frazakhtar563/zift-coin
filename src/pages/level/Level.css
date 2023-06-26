@@ -1,0 +1,26 @@
+.level {
+
+        border: 1px solid #eccf83;
+        padding: 0.5rem 1rem;
+        
+        background: rgb(163,119,173);
+        background: linear-gradient(47deg, rgba(163,119,173,1) 7%, rgba(130,65,143,1) 26%, rgba(9,15,62,1) 64%, rgba(90,99,160,1) 100%, rgba(13,66,11,1) 100%);
+        /* text-align: start; */
+ 
+        border-radius: 10px;
+        border: none;
+        
+    
+}
+@media only screen and (max-width: 600px) {
+
+
+.level-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+
+}

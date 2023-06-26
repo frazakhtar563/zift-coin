@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+    scroll-behavior: smooth;
+    /* border: 2px solid #fff; */
+}
+body {
+    
+        background: rgb(163,119,173);
+        background: linear-gradient(47deg, rgba(163,119,173,1) 7%, rgba(130,65,143,1) 26%, rgba(9,15,62,1) 64%, rgba(90,99,160,1) 100%, rgba(13,66,11,1) 100%);
+     
+       
+} 
+

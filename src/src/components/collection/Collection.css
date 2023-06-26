@@ -1,0 +1,81 @@
+
+.mini {
+    transform: scale(0.1);
+}
+
+/* .rotate {
+    transform: rotate(60deg);   
+} */
+
+.accord-bg {
+    background-color: transparent;
+    border-bottom: 1px solid #ffF;
+    outline: none;
+}
+
+
+
+.accordion {
+    --bs-accordion-border-color: none !important;
+         --bs-accordion-btn-focus-border-color: none;
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+.accordion-button {
+   background: transparent;
+   color: #fff;
+   padding: 1.5rem;
+  
+   /* z-index: 999; */
+}
+
+
+.accordion-button:not(.collapsed) {
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
+.accordion-button::after{
+    background-image: url(../../assets/icons8-plus-24.png) !important;
+   
+}
+.accordion-button::before{
+    background-image: url(../../assets/icons8-negative-24.png) !important;
+   
+}
+
+
+.collection_gif {
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) { 
+   .element {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    margin: 0 auto;
+  
+   }
+ 
+    .collection-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+    }
+@media only screen and (max-width: 1200px) { 
+ 
+    .collection-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+    }
+

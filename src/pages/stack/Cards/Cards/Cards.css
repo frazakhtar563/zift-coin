@@ -1,0 +1,118 @@
+.HPG {
+    border: 1px solid #eccf83;
+    padding: 0.5rem 1rem;
+
+    background: rgb(163, 119, 173);
+    background: linear-gradient(47deg, rgba(163, 119, 173, 1) 7%, rgba(130, 65, 143, 1) 26%, rgba(9, 15, 62, 1) 64%, rgba(90, 99, 160, 1) 100%, rgba(13, 66, 11, 1) 100%);
+    /* text-align: start; */
+
+    border-radius: 10px;
+    border: none;
+
+}
+
+.card {
+    height: 144px;
+    background: transparent;
+    border-color: #fff;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    right: 0.5rem;
+    border-radius: 1px;
+}
+
+.stoki {
+    color: #eccf83;
+    font-size: 24px;
+}
+
+input {
+    background: transparent;
+    width: 40%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .stoki {
+        color: #eccf83;
+        font-size: 18px;
+    }
+
+    .card-stack {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-stack {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.table-container {
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+
+    height: 261px;
+    overflow-y: scroll;
+}
+
+
+
+
+
+.transparent-table {
+    width: 100%;
+    border-collapse: collapse;
+
+
+}
+
+.transparent-table th,
+.transparent-table td {
+    border: 1px solid #fff;
+    padding: 4px;
+
+}
+
+.transparent-table th {
+    background-color: transparent;
+    color: #fff;
+
+
+}
+
+.transparent-table tbody tr:nth-child(even) {
+    background-color: transparent;
+    color: #fff;
+    overflow: hidden;
+
+
+}
+
+.transparent-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar track */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color of the scrollbar handle */
+    border-radius: 4px;
+}

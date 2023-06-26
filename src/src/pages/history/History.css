@@ -1,0 +1,9 @@
+.history_heading {
+  font-size: 62px;
+
+}
+@media only screen and (max-width: 600px) {
+    .history_heading {
+      font-size: 56px;
+    }
+    }

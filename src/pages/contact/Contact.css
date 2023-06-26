@@ -1,0 +1,67 @@
+
+.l-icon {
+    color: #9CBF10;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.6em;
+    text-align: center;
+}
+.send {
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+
+.contact-container form {
+    padding-bottom: 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+.contact-container form .far-icon {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.contact-container form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: none;
+    outline: none;
+}
+
+
+
+.contact-container form button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.contact-container form .fas-btn {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.ag_input input {
+    width: 5%;
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    .contac_heading {
+        font-size: 56px;
+
+    }
+    
+    }

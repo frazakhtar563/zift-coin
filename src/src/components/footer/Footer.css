@@ -1,0 +1,101 @@
+.footer-bg {
+    background-color: #1a1135;
+    
+}
+
+li {
+    list-style: none;
+    padding: 0.2rem;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+  
+}
+
+
+.bottom-bar {
+    border-top: 1px solid #fff;
+}
+
+.bottom-bar-content {
+    padding: 1rem;
+    display: flex;
+    /* height: 60px; */
+    max-width: 1200px;
+    margin: 0 7%;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.footer-bg form {
+    padding-bottom: 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+.footer-bg form .far-icon {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.footer-bg form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: none;
+    outline: none;
+}
+
+.footer-bg form button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.footer-bg form .fas-btn {
+    font-size: 16px;
+    color: #ccc;
+}
+
+
+
+
+.social-icons {
+    display: flex;
+    
+    gap: 5px;
+}
+
+.icons {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons a {
+    color: #fff;
+}
+@media only screen and (max-width: 600px) {
+    .respons {
+        margin-top: 20px;
+    }
+    .footer-bg .img-fluid {
+        width: 300px;
+    }
+    .bottom-bar {
+        font-size: 13px;
+    }
+  
+}

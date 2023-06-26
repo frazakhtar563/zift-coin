@@ -1,0 +1,118 @@
+
+
+
+.sport {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.gl-hero-lead-in {
+    width: 100%;
+    color: rgba(255,255,255,.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    display: block;
+}
+h1 {
+    letter-spacing: -.4px;
+    
+    /* transform: scale(2); */
+    /* font-family: Centra No\.2,sans-serif; */
+    color: #fff;
+    font-size: 82px;
+    font-weight: 900;
+    line-height: 116px;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.gl-hero-body {
+    width: 100%;
+    max-width: 540px;
+    color: #cfcfcf;
+    font-size: 16px;
+    line-height: 32px;
+    /* margin-left: 12rem; */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    z-index: -1;
+   
+}
+
+.chose_pera {
+    position: absolute;
+    top: 159px;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.border {
+
+    /* border-color: rgba(255, 255, 255, 0.3);   */
+    border-radius: 5%;
+    /* height: 350px;ve */
+    border-color: navajowhite;
+    border: none !important;
+    background-color: #444c85;
+    padding: 1rem;
+  
+   
+}
+
+
+@media only screen and (max-width: 1200px) { 
+    .container-8 {
+        font-size: 50px;
+    }
+    .chose_pera {
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 80px;
+
+    }
+   
+    .border {
+     
+        
+        margin-bottom: 30px;
+    
+        }
+
+
+}
+
+@media only screen and (max-width: 600px) { 
+    .container-8 {
+        font-size: 37px;
+    }
+    .chose_pera {
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        font-size: 18px;
+    }
+
+    .border {
+     
+    
+    margin-bottom: 30px;
+
+    }
+
+
+}

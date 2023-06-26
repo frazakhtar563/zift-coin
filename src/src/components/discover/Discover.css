@@ -1,0 +1,33 @@
+
+
+
+@media only screen and (max-width: 600px) {
+    .col-6 {
+        width: 100%;
+    }
+    .text-light {
+        font-size: 1px;
+    }
+    .discover-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+}
+@media only screen and (max-width: 1200px) {
+    .col-6 {
+        width: 100%;
+    }
+    .text-light {
+        font-size: 14px;
+    }
+    .discover-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+}

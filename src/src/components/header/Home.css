@@ -1,0 +1,61 @@
+
+.bg_home {
+ 
+    background-image: url(../../assets/neon-man-virtual-reality-digital-technology-vr-generative-ai.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    content:"";
+    /* position:absolute; */
+    width:100%;
+    /* bottom:1px; */
+    z-index:-1;
+    transform:scale(.9);
+  
+    /* margin-bottom: 40px; */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #000000;
+}
+
+
+
+
+
+.home-heading {
+    font-size: 58px;
+    line-height: 1.5;
+}
+
+
+.cta {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5%;
+    background-color: #eccf83;
+}
+
+.border-slider {
+    border: 1px solid #fff;
+    height: 120px;
+    
+}
+
+.border-sliders {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg_home  {
+        height: 70vh;
+    }
+ 
+}
+@media only screen and (max-width: 1200px) {
+    .bg_home  {
+        height: 70vh;
+    }
+
+  
+}

@@ -1,0 +1,41 @@
+/*  */
+
+.client-img {
+    transform: scale(0.6);
+ 
+    /* display: flex; */
+}
+
+.client-img:hover {
+    opacity: 0.65;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+     
+    .client-img {
+      
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .top-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+}
+
+@media only screen and (max-width: 600px){
+    .top-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+    }

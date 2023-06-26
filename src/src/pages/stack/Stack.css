@@ -1,0 +1,184 @@
+
+
+.border-stak {
+    border: 1px solid #fff;
+    /* width: 1655px; */
+
+    background-color: #1a1135;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #c1b2b2;
+}
+.border-stak4 {
+    border: 1px solid #fff;
+    /* max-width: 819px; */
+    /* height: 228px; */
+    background-color: #1a1135;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #c1b2b2;
+}
+.border-stak2 {
+    border: 1px solid #fff;
+
+    background-color: #1a1135;
+    border: none;
+    border-radius: 5px;
+position: relative;
+    padding: 15px;
+    box-shadow: 5px 10px 18px #c1b2b2;
+}
+.border-stak3 {
+    border: 1px solid #fff;
+    background-color: #1a1135;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 5px 10px 18px #c1b2b2;
+}
+
+
+.text-stack {
+    color: #eccf83;
+}
+.total_stack {
+    color: #eccf83;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.text-hpg {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.cta_stak {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.btn-outline-warning {
+    border-color: #eccf83;
+    color: #fff;
+
+}
+
+.btn-outline-warning:hover {
+    border: none;
+    background-color: #eccf83;
+    color: #0e0e0e;
+}
+.stak-copy {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.stak-copy form {
+    padding-bottom: 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+.stak-copy form .far-icon {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.stak-copy form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: none;
+    outline: none;
+}
+
+.stak-copy.reg {
+    width: 50%;
+}
+
+.stak-copy form button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.stak-copy form .fas-btn {
+    font-size: 16px;
+    color: #ccc;
+}
+
+
+.balance {
+    border: 1px solid #eccf83;
+    background-color: #eccf83;
+    color: #0e0e0e;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    
+
+}
+.sponser1 {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media only screen and (max-width: 1200px) {
+    .sponser {
+        height: auto;
+    width: 100px!important;
+
+    }
+    .balance {
+    padding: 0.2rem 0.5rem;
+        
+    }
+    .stak-sd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+     }
+   
+
+}
+        @media only screen and (max-width: 600px) {
+      
+
+     
+            .sm-stak {
+                display: flex;
+                justify-content: space-between;
+                /* padding: 2rem; */
+              
+               }
+               .total_stack {
+                font-size: 16px;
+               }
+               .text-hpg {
+                font-size: 14px;
+               }
+               .border-stak3 {
+                width: 100%;
+               }
+        }
