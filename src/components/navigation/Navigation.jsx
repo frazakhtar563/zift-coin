@@ -34,20 +34,24 @@ const Navigation = () => {
     }, []);
 
     const getaccount = async () => {
-        let acc = await loadWeb3();
+        try {
 
-        if (acc == "No Wallet") {
-            toast.error('please install metamask')
-        }
-        else if (acc == "Wrong Network") {
-            toast.error('Wrong Network connect to binance testnet')
-        } else {
-            dispatch(updateWalletInfo(acc))
+            let acc = await loadWeb3();
 
+            if (acc == "No Wallet") {
+                toast.error('please install metamask')
+            }
+            else if (acc == "Wrong Network") {
+                toast.error('Wrong Network connect to bsc Testnet')
+            } else {
+                dispatch(updateWalletInfo(acc))
 
+            }
+        } catch (error) {
+            console.error('error while connect ', error.message)
         }
     }
-    
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className={`sticky bgs p-2 ${scrolled ? 'sticky-header' : ''}`}>

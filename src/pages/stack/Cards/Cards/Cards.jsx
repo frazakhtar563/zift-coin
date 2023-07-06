@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Countdown from 'react-countdown';
 import { toast } from 'react-toastify';
-const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
+const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance, isStake }) => {
   const baseUrl = 'http://localhost:3344';
   const { isConnected, acc } = useSelector((state) => state.wallet)
 
@@ -75,13 +75,14 @@ const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
     try {
 
       let response = await axios.get((`${baseUrl}/api/getWalletId/${acc}`))
-
+      console.log('checkuser response', response)
       let status = response.data.success
       if (status) {
 
         setUserId(response?.data?.id)
 
         let responsed = await axios.get((`${baseUrl}/api/getUserinvestments/${response?.data?.id}`))
+        console.log('checkuser responsed', responsed)
 
         setUserStaked(responsed.data)
 
@@ -100,7 +101,7 @@ const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
     if (acc) {
       checkUser()
     }
-  }, [acc]);
+  }, [acc, isStake]);
 
 
   const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -116,6 +117,7 @@ const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
     try {
 
       let response = await axios.put((`${baseUrl}/api/investments/${id}/calculateReward`))
+      console.log('response', response)
       if (response.data.success) {
         toast.success('calimed')
         checkUser()
@@ -136,7 +138,7 @@ const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
     }
 
   }, [userStaked]);
-
+  console.log('userstaked', userStaked)
   return (
     <>
       {
@@ -156,7 +158,7 @@ const Cards = ({ symbol, handleStake, setTotalClaimed, tokenBalance }) => {
                 <div className="col-lg-4 col-md-6 col-sm-12"><span className='d-block stoki text-light'>Amount</span>
                   <form className='mt-lg-4 mb-sm-4 card-stack'>
                     <input className='mt-lg-3' name={item.name} value={item.value} type="number" placeholder='0' onChange={event => handleInputChange(index, event)} />
-                    <button type='button' disabled={item.disable } className='btn btn-outline-warning ms-4' onClick={() => { handleStake(userId, item.name, item.value) }}>Stake Zift</button>
+                    <button type='button' disabled={item.disable} className='btn btn-outline-warning ms-4' onClick={() => { handleStake(userId, item.name, item.value) }}>Stake Zift</button>
                     {item.errorMessage && <p className='text-danger'>{item.errorMessage}</p>}
                   </form>
                 </div>

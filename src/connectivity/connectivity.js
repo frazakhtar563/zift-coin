@@ -1,6 +1,6 @@
 import Web3 from "web3";
 let isItConnected = false;
-let rpc='https://data-seed-prebsc-2-s1.binance.org:8545/'
+let rpc = 'https://data-seed-prebsc-1-s3.binance.org:8545/'
 const networks = {
   bsc: {
     chainId: `0x${Number(97).toString(16)}`,
@@ -10,14 +10,14 @@ const networks = {
       symbol: "BNB",
       decimals: 18,
     },
-    rpcUrls: ["https://bsc-dataseed1.binance.org/", "https://data-seed-prebsc-2-s1.binance.org:8545/"],
+    rpcUrls: ["https://data-seed-prebsc-1-s3.binance.org:8545/"],
 
     blockExplorerUrls: ["https://bscscan.com/"],
   },
 };
-export const remoteWeb3=()=>{
+export const remoteWeb3 = () => {
   return new Web3(rpc)
-  }
+}
 const changeNetwork = async ({ networkName }) => {
   try {
     if (!window.ethereum) throw new Error("No crypto wallet found");

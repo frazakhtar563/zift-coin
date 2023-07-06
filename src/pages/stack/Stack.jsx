@@ -25,6 +25,7 @@ const Stack = () => {
     "http://localhost:3000/stack/?referrallink="
   );
   const [registerAddress, setRegisterAddress] = useState("");
+  const [isStake, setIsStake] = useState(false);
   const [totalClaimed, setTotalClaimed] = useState(0);
 
   const [referalAddress, setReferalAddress] = useState('')
@@ -60,17 +61,18 @@ const Stack = () => {
       );
 
       let symbol = await tokeninstance.methods.symbol().call()
-
-
       obj.tokenSymbol = symbol
       let { totalDeposit } = await ziftCoinContractInstance.methods.getUserInfo(acc).call();
       let rewardInfo = await ziftCoinContractInstance.methods.getRewardInfo(acc).call();
-      console.log('rewardinfo', rewardInfo.AffiliateReward)
       let totalClaimedReward = await ziftCoinContractInstance.methods.totalClaimedReward(acc).call();
       obj.AffiliateReward = await web3.utils.fromWei(String(rewardInfo.AffiliateReward))
       obj.totalWithdrawl = await web3.utils.fromWei(String(Number(totalClaimedReward)))
       obj.totalStaked = await web3.utils.fromWei(String(Number(totalDeposit)))
-      obj.directs = await web3.utils.fromWei(String(Number(rewardInfo['0'])))
+      // obj.directs = await web3.utils.fromWei(String(Number(rewardInfo['0'])))
+      let response = await axios.get((`${baseUrl}/api/getUserReferralReward/${acc}`))
+
+
+      obj.directs = response.data.data
 
       let balance = await tokeninstance.methods.balanceOf(acc).call()
       let defaultReferalAddress = await ziftCoinContractInstance.methods.getDefaultAddress().call()
@@ -146,6 +148,7 @@ const Stack = () => {
         );
         let amount = await web3.utils.toWei(String(stakeAmount))
 
+
         let { referrer, totalDeposit } = await ziftCoinContractInstance.methods.getUserInfo(acc).call();
 
 
@@ -153,7 +156,7 @@ const Stack = () => {
           tokenAbi,
           tokenAdress
         );
-        console.log('referaladdresssss', registerAddress)
+
         let signatureInfo = await axios.post((`${baseUrl}/api/getSignatureDeposit`), {
           contractAddress: ziftCoinContractAddress,
           userAddress: acc,
@@ -162,12 +165,23 @@ const Stack = () => {
         })
 
 
+        const txApp = tokeninstance.methods.approve(ziftCoinContractAddress, amount);
+        const gasEstimateApp = await txApp.estimateGas({ from: acc })
+        console.log("gasEstimate", gasEstimateApp);
         let approve = await tokeninstance.methods.approve(ziftCoinContractAddress, amount).send({
-          from: acc
+          from: acc,
+          gasPrice: web3.utils.toHex(web3.utils.toWei("10", 'gwei')),
+          gasLimit: web3.utils.toHex(gasEstimateApp)
         })
+        getInfo()
+        const tx = ziftCoinContractInstance.methods.deposit(amount, registerAddress, signatureInfo.data.nonce, signatureInfo.data.signature);
+        const gasEstimate = await tx.estimateGas({ from: acc })
+        console.log("gasEstimate", gasEstimate);
         let deposit = await ziftCoinContractInstance.methods.deposit(amount, registerAddress, signatureInfo.data.nonce, signatureInfo.data.signature).send(
           {
-            from: acc
+            from: acc,
+            gasPrice: web3.utils.toHex(web3.utils.toWei("10", 'gwei')),
+            gasLimit: web3.utils.toHex(gasEstimate)
           }
         );
         let stakeObj = {
@@ -177,6 +191,7 @@ const Stack = () => {
         };
 
         axios.post((`${baseUrl}/api/investments`), stakeObj).then((value) => {
+          setIsStake(!isStake)
 
         }).catch((error) => {
           console.error('error while stake', error.message)
@@ -312,7 +327,7 @@ const Stack = () => {
           <span className='balance fs-5'>User Balance</span>
           <span className='text-dark balance text-center ms-5 fs-5 fw-bold'>{Number(tokenInfo.tokenBalance).toFixed(4)}Zift</span>
         </div>
-        <Cards symbol={tokenInfo.tokenSymbol} handleStake={handleStake} acc={acc} setTotalClaimed={setTotalClaimed} tokenBalance={tokenInfo.tokenBalance} />
+        <Cards symbol={tokenInfo.tokenSymbol} handleStake={handleStake} acc={acc} setTotalClaimed={setTotalClaimed} tokenBalance={tokenInfo.tokenBalance} isStake={isStake} />
         <div className="border-stak4 p-5 mx-auto">
           <div className="row">
             <span className='text-light mb-4'>  Total income: based on your tarrif plan ( <span className='text-warning'>from 0.15% to 0.23% daily</span> )
